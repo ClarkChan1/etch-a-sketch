@@ -35,7 +35,10 @@ function makeGridResizeButton() {
   let resizeButton = document.createElement('button');
   resizeButton.textContent = "change dimensions";
   resizeButton.addEventListener('click', function() {
-    let chosenDimension = prompt("enter number that represents rows and columns:");
+    let chosenDimension;
+    while(chosenDimension == null){
+      chosenDimension = prompt("enter number that represents rows and columns:");
+    }
     removeGrid();
     makeGrid(+chosenDimension);
   });
